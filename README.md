@@ -4,7 +4,7 @@
 Mining IMDb Dataset for Movie Trends
 
 ## Course Component
-Data Mining External Project (Phase 1)
+Data Mining External Project
 
 ## Team Members 
 - Member 1: Ayush Dev
@@ -24,19 +24,17 @@ Files mainly used:
 To explore IMDb datasets and uncover hidden patterns in:  
 genres, movie rating trends, audience preferences, director impacts, runtime correlation, etc.
 
-## Phase 1 Deliverables (Already Completed & Uploaded)
+## Project Files
 | File Name | Description |
 |----------|-------------|
-| 1_team_work_distribution.txt | Work split between both members |
-| 2_data_processing_plan.txt | How raw IMDb data will be cleaned & structured |
-| 3_research_questions.txt | 8 exploratory research questions |
-| 4_research_question_solution_approach.txt | Methodology/approach for each research question |
-| 5_literature_review.txt | Theory support / past paper references |
+| TeamWork.txt | Work split between both members |
+| Data_processing_plan.txt | How raw IMDb data will be cleaned & structured |
+| Research_questions.txt | 8 exploratory research questions |
+| Research_Question_solution_approach.txt | Methodology/approach for each research question |
+| Literature_Review.txt | Theory support / past paper references |
+| DATASET.txt | IMDb dataset documentation with schema details |
 
-## Phase 1 Status
-✅ Completed — preparing for GitHub submission
-
-## Repository Structure (planned)
+## Repository Structure
 ```
 /data_raw/      -> IMDb .tsv raw files
 /data_clean/    -> after cleaning (CSV)
@@ -45,7 +43,7 @@ genres, movie rating trends, audience preferences, director impacts, runtime cor
 /docs/          -> reports
 ```
 
-## Next Phase (Phase 2 Preview)
+## Project Tasks
 - Data cleaning + preprocessing
 - EDA visualization based on research questions
 - Trend observation + plots
@@ -54,4 +52,3 @@ genres, movie rating trends, audience preferences, director impacts, runtime cor
 
 ### Notes
 Commit contribution by each member will be individually tracked (as per evaluation criteria).
-
