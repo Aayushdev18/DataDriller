@@ -1,19 +1,30 @@
-IMDb Data Files Available for Download
+IMDb Datasets
 
-Documentation for these data files can be found on IMDb Non-Commercial Datasets.
+Source: https://datasets.imdbws.com/
 
-The data files available on this page are provided for non-commercial use only. As of March 18, 2024 the datasets on this page are backed by a new data source. There has been no change in location or schema, but if you encounter issues with the datasets following the March 18th update, please contact imdb-data-interest@imdb.com.
+These are the IMDb data files available for download. They are provided for non-commercial use only.
 
-name.basics.tsv.gz
+Available datasets:
 
-title.akas.tsv.gz
+- name.basics.tsv.gz
+  Contains information about actors, directors, writers and other people in IMDb
 
-title.basics.tsv.gz
+- title.akas.tsv.gz
+  Alternative titles for movies and TV shows in different languages/regions
 
-title.crew.tsv.gz
+- title.basics.tsv.gz
+  Core information about titles (movies, TV shows, episodes) with metadata like genres, runtime, year
 
-title.episode.tsv.gz
+- title.crew.tsv.gz
+  Director and writer information for each title
 
-title.principals.tsv.gz
+- title.episode.tsv.gz
+  TV episode information and season/episode numbering
 
-title.ratings.tsv.gz
+- title.principals.tsv.gz
+  Principal cast and crew members for each title (actors, directors, writers)
+
+- title.ratings.tsv.gz
+  User ratings and vote counts for titles
+
+Note: As of March 18, 2024 the datasets are backed by a new data source. If you encounter any issues, contact imdb-data-interest@imdb.com
