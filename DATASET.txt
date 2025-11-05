@@ -1,0 +1,180 @@
+# IMDb Non-Commercial Dataset Documentation
+
+## Overview
+This document provides information about the IMDb data files available for download from the IMDb Non-Commercial Datasets.
+
+**Source URL:** https://datasets.imdbws.com/
+
+**Important Note:** The data files available are provided for non-commercial use only. As of March 18, 2024, the datasets are backed by a new data source. There has been no change in location or schema, but if you encounter issues with the datasets following the March 18th update, please contact imdb-data-interest@imdb.com.
+
+**Documentation:** Full documentation for these data files can be found on IMDb Non-Commercial Datasets.
+
+---
+
+## Available Dataset Files
+
+### 1. name.basics.tsv.gz
+**Description:** Contains information about individuals (actors, directors, writers, etc.) in the IMDb database.
+
+**Key Fields (typical):**
+- nconst (name identifier)
+- primaryName
+- birthYear
+- deathYear
+- primaryProfession
+- knownForTitles
+
+**Use Case:** Mapping names to their roles, identifying actors/directors, analyzing career spans and professional categories.
+
+---
+
+### 2. title.akas.tsv.gz
+**Description:** Alternative titles for movies and TV shows, including titles in different languages and regions.
+
+**Key Fields (typical):**
+- titleId
+- ordering
+- title
+- region
+- language
+- types
+- attributes
+- isOriginalTitle
+
+**Use Case:** Understanding international distribution, regional title variations, and multi-language content mapping.
+
+---
+
+### 3. title.basics.tsv.gz
+**Description:** Core information about titles (movies, TV shows, episodes, etc.) including basic metadata.
+
+**Key Fields (typical):**
+- tconst (title identifier)
+- titleType
+- primaryTitle
+- originalTitle
+- isAdult
+- startYear
+- endYear
+- runtimeMinutes
+- genres
+
+**Use Case:** Primary dataset for title analysis, genre exploration, runtime correlations, and temporal trends. This is a core file for most IMDb analyses.
+
+---
+
+### 4. title.crew.tsv.gz
+**Description:** Contains director and writer information for each title.
+
+**Key Fields (typical):**
+- tconst
+- directors (comma-separated list of nconsts)
+- writers (comma-separated list of nconsts)
+
+**Use Case:** Mapping directors and writers to titles, analyzing director impact on ratings, identifying creative teams, and studying directorial trends.
+
+---
+
+### 5. title.episode.tsv.gz
+**Description:** Information about TV episode relationships and season/episode numbering.
+
+**Key Fields (typical):**
+- tconst (episode identifier)
+- parentTconst (series identifier)
+- seasonNumber
+- episodeNumber
+
+**Use Case:** Analyzing TV series structure, episode patterns, season-wise trends, and serial content analysis.
+
+---
+
+### 6. title.principals.tsv.gz
+**Description:** Principal cast/crew members for each title, including actors, directors, writers, and other roles.
+
+**Key Fields (typical):**
+- tconst
+- ordering
+- nconst
+- category (actor, director, writer, etc.)
+- job
+- characters
+
+**Use Case:** Detailed cast and crew analysis, role categorization, character mapping, and comprehensive credit analysis.
+
+---
+
+### 7. title.ratings.tsv.gz
+**Description:** User ratings and vote counts for titles.
+
+**Key Fields (typical):**
+- tconst
+- averageRating
+- numVotes
+
+**Use Case:** Analyzing rating trends, audience preferences, vote distribution, and correlating ratings with other factors (genre, runtime, director, etc.). Essential for understanding audience reception.
+
+---
+
+## Dataset Relationships
+
+### Primary Relationships:
+- **title.basics** ↔ **title.ratings**: Core title information with ratings
+- **title.basics** ↔ **title.crew**: Titles linked to directors/writers
+- **title.basics** ↔ **title.principals**: Titles linked to cast/crew members
+- **title.principals** ↔ **name.basics**: People linked to their roles
+- **title.episode** ↔ **title.basics**: Episodes linked to their parent series
+- **title.akas** ↔ **title.basics**: Alternative titles linked to main titles
+
+---
+
+## File Format Specifications
+
+- **Format:** TSV (Tab-Separated Values)
+- **Compression:** GZIP (.gz)
+- **Encoding:** UTF-8
+- **Header:** First row contains column names
+- **Null Values:** Represented as `\N`
+
+---
+
+## Download Instructions
+
+1. Visit: https://datasets.imdbws.com/
+2. Download the required `.tsv.gz` files
+3. Extract using: `gunzip filename.tsv.gz`
+4. Files can be processed using standard TSV parsing tools
+
+---
+
+## Data Update Frequency
+
+The IMDb datasets are updated daily and are typically available within 24 hours of IMDb's data refresh cycle.
+
+---
+
+## Usage in This Project
+
+### Primary Files Used:
+- **title.basics.tsv.gz**: Core title metadata and genres
+- **title.ratings.tsv.gz**: Rating and vote data
+- **name.basics.tsv.gz**: People/actor information
+- **title.crew.tsv.gz**: Director mapping (optional)
+
+### Secondary Files (for extended analysis):
+- **title.principals.tsv.gz**: Detailed cast/crew analysis
+- **title.episode.tsv.gz**: TV series analysis
+- **title.akas.tsv.gz**: International title mapping
+
+---
+
+## Notes
+
+- All files are large and compressed. Ensure adequate disk space before downloading.
+- The datasets are updated regularly, so timestamps may vary.
+- Some fields may contain `\N` for missing/null values.
+- The tconst and nconst identifiers are stable and can be used for joining across files.
+
+---
+
+*Last Updated: Based on IMDb dataset structure as of March 18, 2024*
+
